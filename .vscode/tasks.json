@@ -1,0 +1,67 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "go",
+      "label": "go: build",
+      "command": "build",
+      "args": [
+        "-ldflags",
+        "-s -w -H=windowsgui -extldflags=-static",
+        "${workspaceFolder}/cmd/govermon"
+      ],
+      "problemMatcher": ["$go"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "icon": {
+        "id": "archive",
+        "color": "terminal.ansiRed"
+      },
+      "detail": "go build ${workspaceFolder}/cmd/govermon"
+    },
+    {
+      "type": "shell",
+      "label": "go: install",
+      "command": "go",
+      "args": [
+        "install",
+        "-ldflags",
+        "-s -w -H=windowsgui -extldflags=-static",
+        "'${workspaceFolder}/cmd/govermon'"
+      ],
+      "problemMatcher": ["$go"],
+      "icon": {
+        "id": "git-stash",
+        "color": "terminal.ansiYellow"
+      },
+      "detail": "go install ${workspaceFolder}/cmd/govermon"
+    },
+    {
+      "type": "shell",
+      "label": "go: mod tidy",
+      "command": "go",
+      "args": ["mod", "tidy", "-v"],
+      "problemMatcher": ["$go"],
+      "icon": {
+        "id": "cloud-download",
+        "color": "terminal.ansiCyan"
+      }
+    },
+    {
+      "type": "shell",
+      "label": "golangci-lint: package govermon",
+      "command": "golangci-lint",
+      "args": ["run"],
+      "problemMatcher": ["$go"],
+      "group": {
+        "kind": "test"
+      },
+      "icon": {
+        "id": "bracket-error",
+        "color": "terminal.ansiGreen"
+      }
+    }
+  ]
+}

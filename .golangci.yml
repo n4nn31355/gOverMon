@@ -1,0 +1,49 @@
+linters:
+  enable:
+    # - depguard
+    - errorlint
+    - exhaustive
+    - funlen
+    - goconst
+    - gocritic
+    - godox
+    # - godot
+    - gofumpt
+    - gofmt
+    - goimports
+    # - gosimple
+    - misspell
+    - nolintlint
+    - perfsprint
+    - predeclared
+    - revive
+    - testifylint
+    - unconvert
+    - unused
+    - usestdlibvars
+    - whitespace
+    - loggercheck
+
+    - stylecheck
+
+issues:
+  max-issues-per-linter: 0
+  max-same-issues: 0
+  # exclude-use-default: true
+  # exclude-case-sensitive: false
+  # exclude-dirs-use-default: true
+  # new: false
+  # fix: false
+  # whole-files: false
+  # exclude-dirs:
+  #   - lib-comparison
+
+linters-settings:
+  godox:
+    # Report any comments starting with keywords, this is useful for TODO or FIXME comments that
+    # might be left in the code accidentally and should be resolved before merging.
+    # Default: ["TODO", "BUG", "FIXME"]
+    keywords:
+      - FIXME
+      - HACK
+      - BUG
